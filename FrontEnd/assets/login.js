@@ -4,6 +4,7 @@ const form = document.getElementById("form-login");
 const badLogin = document.getElementById("bad-login");
 
 // Récupération des informations au submit
+
 form.addEventListener('submit', function (event) {
   event.preventDefault();
 
@@ -17,6 +18,7 @@ form.addEventListener('submit', function (event) {
 });
 
 // Fonction d'identification
+
 function logIn(login) {
   fetch('http://localhost:5678/api/users/login', {
     method: 'POST',
@@ -49,6 +51,7 @@ function logIn(login) {
 }
 
 // Fonction de validation du format de l'email
+
 function validateEmail(email) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);

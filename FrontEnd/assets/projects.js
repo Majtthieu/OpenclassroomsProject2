@@ -14,6 +14,7 @@ async function createProjects(projects) {
     const sectionGallery = document.querySelector(".gallery");
     // Création d’une balise dédiée à un projet
     const projectElement = document.createElement("figure");
+    // Attribution d'un id correspondant à celui de la db
     projectElement.setAttribute("id", `f${projects[i].id}`)
     // Création des balises 
     const imageElement = document.createElement("img");
@@ -21,7 +22,7 @@ async function createProjects(projects) {
     const titleElement = document.createElement("figcaption");
     titleElement.innerText = project.title;
 
-    // On rattache la balise project a la div gallery
+    // On rattache la balise project à la div gallery
     sectionGallery.appendChild(projectElement);
     projectElement.appendChild(imageElement);
     projectElement.appendChild(titleElement);
@@ -362,9 +363,7 @@ document.querySelectorAll('.arrow').forEach(a => {
 
 function addNewProject() {
   const titleInput = document.querySelector("#title-input");
-  console.log(titleInput);
   const categoryInput = document.querySelector("#cat-input");
-  console.log(categoryInput);
   const imageInput = document.querySelector("#img-input");
   const submit = document.querySelector("#form-modal");
   submit.addEventListener('submit', (event) => {
